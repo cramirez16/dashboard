@@ -1,0 +1,255 @@
+@font-face {
+  font-family: roboto-regular;
+  src: url(assets/fonts/roboto/Roboto-Regular.ttf);
+}
+
+:root {
+  --grid-container-width: 1005px;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: roboto-regular;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  grid-template-rows: 125px 1fr;
+  height: 100vh;
+  max-width: var(--grid-container-width);
+}
+
+header {
+  grid-column: 2 / 3;
+  background: white;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: 1fr 1fr;
+  box-shadow: 0px 3px 3px 0px rgb(130, 130, 130);
+  z-index: 100;
+  padding: 20px;
+}
+
+header > .row0col0 {
+  display: flex;
+  align-items: center;
+}
+header > .row0col0 > input {
+  height: 20px;
+  border-radius: 10px;
+  background-color: lightgray;
+  padding-left: 10px;
+  width: calc(100% - 20px);
+  border: none;
+  outline: none;
+}
+header > .row0col0 > img {
+  height: 16px;
+}
+
+header > .row0col1 {
+  /* grid-column: 4 / 6;
+  grid-row: 1 / 2; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  gap: 20px;
+}
+
+header > .row0col1 > .icon {
+  height: 20px;
+}
+
+header > .row0col1 > .avatar {
+  height: 32px;
+  padding: 3px;
+  background-color: #ffce05;
+  border-radius: 50%;
+}
+
+header > .row1col0 {
+  /* grid-column: 1 / 4;
+  grid-row: 2 / 3; */
+  display: flex;
+  gap: 20px;
+}
+
+header > .row1col0 > .avatar {
+  height: 42px;
+  padding: 3px;
+  background-color: #ffd4ce;
+  border-radius: 50%;
+}
+
+header > .row1col1 {
+  /* grid-column: 4 / 6;
+  grid-row: 2/3; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: right;
+  gap: 20px;
+}
+
+header > .row1col1 > button {
+  background-color: rgb(0, 134, 223);
+  color: white;
+  width: 4rem;
+  padding: 0.3rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 0.8rem;
+}
+
+aside {
+  grid-row: 1 / 6;
+  background: rgb(0, 134, 223);
+  color: white;
+  padding: 10px;
+}
+
+aside > .header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+aside > .nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+aside > div,
+aside > div > div {
+  display: flex;
+  gap: 15px;
+}
+
+aside > div > img {
+  width: 30px;
+}
+
+aside > div > div > img {
+  width: 16px;
+}
+
+aside > .setup {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+main {
+  grid-column: 2 / 6;
+  background: lightgrey;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 203px;
+  padding: 10px;
+  padding-bottom: 30px;
+}
+
+main > section > h4 {
+  padding-bottom: 0.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+  height: calc(100% - 1.7rem);
+}
+
+.cards > div > p {
+  font-size: 0.7rem;
+}
+
+.card {
+  border-left: 5px solid rgb(255, 187, 0);
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 24px 1fr 16px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 20px;
+}
+
+.card > .icons > img {
+  height: 16px;
+}
+
+aside-right {
+  display: grid;
+  grid-template-rows: 3fr 240px;
+  margin-left: 10px;
+}
+
+aside-right > .announcements > h4 {
+  padding-bottom: 0.5rem;
+}
+
+aside-right > .announcements > div {
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+aside-right > .announcements > div > h6 {
+  padding-top: 0.5rem;
+}
+
+aside-right > .announcements > div > p {
+  font-size: 0.7rem;
+  color: grey;
+  padding-bottom: 0.5rem;
+  padding-top: 0.2rem;
+}
+
+aside-right > .trending {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+aside-right > .trending > div {
+  display: flex;
+  gap: 0.7rem;
+  padding: 0.3rem 0;
+}
+
+aside-right > .trending > div > img {
+  height: 32px;
+  padding: 3px;
+  background-color: #ffce05;
+  border-radius: 50%;
+}
+
+aside-right > .trending > div > .group > p {
+  font-size: 0.7rem;
+}
+
+@media (min-width: 1005px) {
+  body {
+    padding-left: calc(calc(100vw - var(--grid-container-width)) / 2);
+  }
+}
